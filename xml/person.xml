@@ -1,1 +1,131 @@
-/home/trytond-1.8.2/trytond/modules/ekd_party/xml/person.xml
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="person_view_tree">
+            <field name="model">party.party</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <tree string="Persons">
+                    <field name="name" select="1"/>
+                    <field name="vat_code" select="1"/>
+                    <field name="phone" select="1"/>
+                    <field name="mobile" select="1"/>
+                    <field name="fax" select="1"/>
+                    <field name="email" select="1"/>
+                    <field name="website" select="1"/>
+                    <field name="birthday" select="1"/>
+                    <field name="lang" select="2"/>
+                </tree>
+                ]]>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="person_view_form">
+            <field name="model">party.party</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <form string="Person" col="8">
+                    <label name="name" />
+                    <field name="name" />
+                    <label name="shortname"/>
+                    <field name="shortname" xexpand="1"/>
+                    <label name="code" />
+                    <field name="code" />
+                    <newline/>
+                    <group colspan="10" col="20" id="gr_boolean">
+                        <label name="active" />
+                        <field name="active" xexpand="0" width="25"/>
+                        <label name="supplier" />
+                        <field name="supplier" xexpand="0" width="25"/>
+                        <label name="customer" />
+                        <field name="customer" xexpand="0" width="25"/>
+                        <label name="individual"/>
+                        <field name="individual" xexpand="0" width="25"/>
+                    </group>
+                    <notebook colspan="6">
+                        <page string="General" id="general">
+                            <group col="5" colspan="4" id="lang">
+                                <field name="addresses" mode="tree,form" colspan="4">
+                                    <tree string="Addresses" sequence="sequence"
+                                    fill="1">
+                                        <field name="name"/>
+                                        <field name="street"/>
+                                        <field name="streetbis"/>
+                                        <field name="zip"/>
+                                        <field name="city"/>
+                                        <field name="country"/> 
+                                        <field name="subdivision"/>
+                                    </tree>
+                                </field>
+                                <group col="2" colspan="1" id="lang">
+                                    <label name="lang"/>
+                                    <field name="lang" widget="selection"/>
+                                    <field colspan="2" name="photo" widget="image" />
+                                </group>
+                            </group>
+                            <field name="contact_mechanisms" colspan="2">
+                                <tree string="Contact Mechanisms" sequence="sequence"
+                                    fill="1">
+                                    <field name="type"/>
+                                    <field name="value"/>
+                                    <field name="comment"/>
+                                </tree>
+                            </field>
+                            <group col="1" colspan="2" id="categories">
+                                <separator string="Categories" id="categories"/>
+                                <field name="categories">
+                                    <tree string="Categories" fill="1">
+                                        <field name="rec_name" select="1"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Accounting" id="accounting">
+                            <separator string="VAT" colspan="4" id="vat"/>
+                            <label name="vat_country"/>
+                            <field name="vat_country"/>
+                            <label name="vat_number"/>
+                            <field name="vat_number"/>
+                            <separator string="Legal Document" colspan="4" id="vat"/>
+                            <field name="document" mode="form,tree" colspan="4">
+                                <tree string="Document" sequence="sequence"
+                                    fill="1">
+                                    <field name="typedoc"/>
+                                    <field name="number"/>
+                                    <field name="date_reg"/>
+                                    <field name="date_end"/>
+                                    <field name="active"/>
+                                    <field name="issued"/> 
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+                ]]>
+            </field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_person_form">
+            <field name="name">Persons</field>
+            <field name="res_model">party.party</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('individual', '=', True)]</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_person_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="person_view_tree"/>
+            <field name="act_window" ref="act_person_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_person_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="person_view_form"/>
+            <field name="act_window" ref="act_person_form"/>
+        </record>
+        <menuitem parent="party.menu_party" sequence="1"
+            action="act_person_form" id="menu_person_form"/>
+
+    </data>
+</tryton>

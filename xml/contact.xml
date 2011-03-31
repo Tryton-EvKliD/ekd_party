@@ -1,1 +1,94 @@
-/home/trytond-1.8.2/trytond/modules/ekd_party/xml/contact.xml
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="view_party_contact_tree">
+            <field name="model">ekd.party.contact</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <tree string="Contacts">
+                    <field name="type_contact" />
+                    <field name="contact" select="1"/>
+                    <field name="job_function" />
+                    <field name="party" select="1"/>
+                    <field name="date_end" select="2"/>
+                    <field name="phone" select="1"/>
+                    <field name="mobile" select="1"/>
+                    <field name="fax" select="2"/>
+                    <field name="email" select="2"/>
+                    <field name="website" />
+                    <field name="note" select="2"/>
+                    <field name="active" select="2"/>
+                </tree>
+                ]]>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_party_contact_form">
+            <field name="model">ekd.party.contact</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <form string="Contact">
+                    <group col="6" colspan="6" id="form">
+                        <group col="6" id="gr_head">
+                            <label align="0.0" name="party" />
+                            <field colspan="2" name="party" />
+                            <label align="0.0" name="contact" />
+                            <field colspan="1" name="contact" />
+                        </group>
+                        <newline/>
+                        <group col="6" id="gr_head">
+                            <label align="0.0" name="job_function" />
+                            <field colspan="1" name="job_function" />
+                            <label align="0.0" name="type_contact"/>
+                            <field colspan="1" name="type_contact" />
+                        </group>
+                        <newline/>
+                        <group col="6" id="gr_head">
+                            <label align="0.0" name="phone" />
+                            <field colspan="1" name="phone" />
+                            <label align="0.0" name="mobile" />
+                            <field colspan="1" name="mobile" />
+                            <label align="0.0" name="fax" />
+                            <field colspan="1" name="fax" />
+                            <label align="0.0" name="email" />
+                            <field colspan="1" name="email" />
+                            <label align="0.0" name="website" />
+                            <field colspan="1" name="website" />
+                        </group>
+                        <newline/>
+                        <group col="6" id="gr_head">
+                            <label align="0.0" name="note" />
+                            <field colspan="6" name="note" />
+                            <label align="0.0" name="date_end" />
+                            <field colspan="1" name="date_end" />
+                            <label align="0.0" name="active" />
+                            <field colspan="1" name="active" />
+                        </group>
+                    </group>
+                </form>
+                ]]>
+            </field>
+        </record>
+        <record model="ir.action.act_window" id="act_party_contact_form">
+            <field name="name">Contact</field>
+            <field name="res_model">ekd.party.contact</field>
+            <field name="view_type">form</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_party_contact_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="view_party_contact_tree"/>
+            <field name="act_window" ref="act_party_contact_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_party_contact_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="view_party_contact_form"/>
+            <field name="act_window" ref="act_party_contact_form"/>
+        </record>
+        <menuitem parent="party.menu_party" sequence="1"
+            action="act_party_contact_form" id="menu_party_contact_form"/>
+
+    </data>
+</tryton>

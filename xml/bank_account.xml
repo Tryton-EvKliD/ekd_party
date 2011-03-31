@@ -1,1 +1,102 @@
-/home/trytond-1.8.2/trytond/modules/ekd_party/xml/bank_account.xml
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="bank_account_view_tree">
+            <field name="model">ekd.party.bank_account</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <tree string="Accounts in Banks">
+                    <field name="party" select="1"/>
+                    <field name="type_account" select="1"/>
+                    <field name="account" select="2"/>
+                    <field name="name" select="1"/>
+                    <field name="corr_account" select="2"/>
+                    <field name="bic" select="2"/>
+                    <field name="end_date" select="2"/>
+                    <field name="active" select="2"/>
+                    <field name="address" select="2"/>
+                </tree>
+                ]]>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="bank_account_view_form">
+            <field name="model">ekd.party.bank_account</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <form string="Account in Bank" col="6">
+                    <label name="party"/>
+                    <field name="party" colspan="5"/>
+                    <label name="type_account"/>
+                    <field name="type_account"/>
+                    <group colspan="2" col="20" id="checkboxes">
+                        <label name="active"/>
+                        <field name="active"
+                            xexpand="0" width="25"/>
+                        <!-- Add here some checkboxes ! -->
+                        <label name="end_date"/>
+                        <field xexpand="0" width="100" name="end_date"/>
+                    </group>
+                    <newline/>
+                    <group colspan="6" col="12" id="account">
+                        <label name="account"/>
+                        <field colspan="2" name="account"/>
+                        <label name="bic"/>
+                        <field colspan="2" name="bic"/>
+                        <label name="corr_account"/>
+                        <field colspan="2" name="corr_account"/>
+                    </group>
+                    <newline/>
+                    <group colspan="6" col="12" id="account">
+                        <label name="name"/>
+                        <field colspan="3" name="name" />
+                        <label name="address"/>
+                        <field colspan="3" name="address"/>
+                        <label name="bank"/>
+                        <field name="bank"/>
+                    </group>
+                </form>
+                ]]>
+            </field>
+        </record>
+        <record model="ir.action.act_window" id="act_bank_account_form">
+            <field name="name">Bank Account</field>
+            <field name="res_model">ekd.party.bank_account</field>
+            <field name="view_type">form</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_bank_account_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="bank_account_view_tree"/>
+            <field name="act_window" ref="act_bank_account_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_bank_account_form_view2">
+          <field name="sequence" eval="20"/>
+          <field name="view" ref="bank_account_view_form"/>
+          <field name="act_window" ref="act_bank_account_form"/>
+        </record>
+        <menuitem name="Bank account" parent="party.menu_party"
+              sequence="2" action="act_bank_account_form"
+              id="menu_bank_account_form"/>
+        <record model="ir.action.act_window" id="act_bank_account_form2">
+            <field name="name">Bank Account</field>
+            <field name="res_model">ekd.party.bank_account</field>
+            <field name="view_type">form</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_bank_account_form2_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="bank_account_view_form"/>
+            <field name="act_window" ref="act_bank_account_form2"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_bank_account_form2_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="bank_account_view_tree"/>
+            <field name="act_window" ref="act_bank_account_form2"/>
+        </record>
+        <menuitem name="New bank" parent="menu_bank_account_form"
+              action="act_bank_account_form2"
+              id="menu_bank_account_form2"/>
+    </data>
+</tryton>

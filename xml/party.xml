@@ -1,1 +1,339 @@
-/home/trytond-1.8.2/trytond/modules/ekd_party/xml/party.xml
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+
+        <menuitem name="Party Management" sequence="35" id="party.menu_party"
+            icon="tryton-users"/>
+
+        <record model="res.group" id="group_party_read">
+            <field name="name">Party (read)</field>
+        </record>
+        <record model="res.group" id="group_party_write">
+            <field name="name">Party (write)</field>
+        </record>
+
+        <record model="ir.ui.view" id="party_view_tree">
+            <field name="model">party.party</field>
+            <field name="type">tree</field>
+            <field name="inherit" ref="party.party_view_tree"/>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <data>
+                    <xpath
+                        expr="/tree/field[@name=&quot;code&quot;]"
+                        position="after">
+                        <field name="shortname" select="2"/>
+                    </xpath>
+                    <xpath
+                        expr="/tree/field[@name=&quot;lang&quot;]"
+                        position="replace">
+                        <field name="supplier" tree_invisible="1" select="2"/>
+                        <field name="customer" tree_invisible="1" select="2"/>
+                        <field name="individual" tree_invisible="1" select="2"/>
+                        <field name="employee" tree_invisible="1" select="2"/>
+                    </xpath>
+                </data>
+                ]]>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="party_view_form">
+            <field name="model">party.party</field>
+            <field name="type">form</field>
+            <field name="inherit" ref="party.party_view_form"/>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <data>
+                    <xpath
+                        expr="/form/field[@name=&quot;name&quot;]"
+                        position="after">
+                        <label align="0.0" name="shortname"/>
+                        <field colspan="1" name="shortname" />
+                        <label align="0.0" name="legal_form"/>
+                        <field colspan="1" name="legal_form" />
+                    </xpath>
+                    <xpath
+                        expr="/form/field[@name=&quot;code&quot;]"
+                        position="after">
+                        <group colspan="2" col="20" id="gr_boolean">
+                            <label name="supplier" />
+                            <field name="supplier" xexpand="0" width="25"/>
+                            <label name="customer" />
+                            <field name="customer" xexpand="0" width="25"/>
+                            <label name="individual"/>
+                            <field name="individual" xexpand="0" width="25"/>
+                        </group>
+                    </xpath>
+<!-->
+                    <xpath
+                        expr="/form/label[@name=&quot;active&quot;]"
+                        position="replace">
+                    </xpath>
+                    <xpath
+                        expr="/form/field[@name=&quot;active&quot;]"
+                        position="replace">
+                    </xpath>
+                    <xpath
+                        expr="/form/label[@name=&quot;name&quot;]"
+                        position="before">
+                        <group col="12" colspan="12" id="head">
+                        <group colspan="6" id="head_txt">
+                            <group col="10" id="gr_head">
+                                <label align="0.0" name="name" />
+                                <field colspan="3" name="name" />
+                                <label align="0.0" name="shortname"/>
+                                <field colspan="1" name="shortname" />
+                                <label align="0.0" name="code" />
+                                <field colspan="1" name="code" />
+                            </group>
+                        </group>
+                        </group>
+                    </xpath>
+<-->
+                    <xpath
+                        expr="/form/notebook/page[@id=&quot;general&quot;]"
+                        position="replace">
+                        <page string="General" id="general">
+                            <group col="5" colspan="4" id="address">
+                                <field name="addresses" mode="tree,form" colspan="4">
+                                    <tree string="Addresses" sequence="sequence"
+                                        fill="1">
+                                        <field name="rec_name"/>
+                                    </tree>
+                                </field>
+                                <group col="2" colspan="1" id="lang">
+                                    <field colspan="2" name="photo" widget="image" />
+                                    <label name="lang"/>
+                                    <field name="lang" widget="selection"/>
+                                </group>
+                            </group>
+                            <field name="contact_mechanisms" colspan="2">
+                                <tree string="Contact Mechanisms" sequence="sequence"
+                                    fill="1">
+                                    <field name="type"/>
+                                    <field name="value"/>
+                                    <field name="comment"/>
+                                </tree>
+                            </field>
+                            <group col="1" colspan="2" id="categories">
+                                <separator string="Categories" id="categories"/>
+                                <field name="categories">
+                                    <tree string="Categories" fill="1">
+                                        <field name="rec_name" select="1"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Contacts" id="contacts">
+                            <label name="parent_party"/>
+                            <field name="parent_party"/>
+                            <newline/>
+                            <field name="contacts" colspan="4">
+                                <tree string="Contacts" fill="1">
+                                    <field name="job_function"/>
+                                    <field name="contact"/>
+                                    <field name="phone"/>
+                                    <field name="mobile"/>
+                                    <field name="email"/>
+                                    <field name="note"/>
+                                    <field name="type_contact"/>
+                                    <field name="date_end"/>
+                                    <field name="active"/>
+                                </tree>
+                                <form string="Contacts" >
+                                    <group col="6" id="communication">
+                                        <label name="contact"/>
+                                        <field colspan="5" name="contact"/>
+                                        <label name="type_contact"/>
+                                        <field colspan="2" name="type_contact"/>
+                                        <label name="job_function"/>
+                                        <field colspan="2" name="job_function"/>
+                                    </group>
+                                    <newline/>
+                                    <group col="6" id="communication">
+                                        <label name="phone"/>
+                                        <field name="phone"/>
+                                        <label name="mobile"/>
+                                        <field name="mobile"/>
+                                        <label name="email"/>
+                                        <field name="email"/>
+                                    </group>
+                                    <newline/>
+                                    <group col="6" id="communication">
+                                        <label name="note"/>
+                                        <field colspan="6" name="note"/>
+                                    </group>
+                                    <newline/>
+                                    <group col="4" id="communication">
+                                        <label name="date_end"/>
+                                        <field name="date_end"/>
+                                        <label name="active"/>
+                                        <field name="active"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </xpath>
+                    <xpath
+                        expr="/form/notebook/page[@id=&quot;accounting&quot;]/separator[@id=&quot;vat&quot;]"
+                        position="replace">
+                    </xpath>
+                    <xpath
+                        expr="/form/notebook/page[@id=&quot;accounting&quot;]/label[@name=&quot;vat_country&quot;]"
+                        position="replace">
+                    </xpath>
+                    <xpath
+                        expr="/form/notebook/page[@id=&quot;accounting&quot;]/field[@name=&quot;vat_country&quot;]"
+                        position="replace">
+                    </xpath>
+                    <xpath
+                        expr="/form/notebook/page[@id=&quot;accounting&quot;]/label[@name=&quot;vat_number&quot;]"
+                        position="replace">
+                    </xpath>
+                    <xpath
+                        expr="/form/notebook/page[@id=&quot;accounting&quot;]/field[@name=&quot;vat_number&quot;]"
+                        position="replace">
+                        <field name="vat_number" invisible="1"/>
+                    </xpath>
+                    <xpath
+                        expr="/form/notebook/page[@id=&quot;accounting&quot;]"
+                        position="after">
+                        <page string="Registration Data and Bank" id="registration" >
+                            <group col="6" id="accounting">
+                                <separator string="VAT" colspan="6" id="vat"/>
+                                <label name="vat_country"/>
+                                <field name="vat_country"/>
+                                <label name="vat_number"/>
+                                <field name="vat_number"/>
+                                <label name="kpp_number"/>
+                                <field name="kpp_number"/>
+                                <label name="ogrn_number"/>
+                                <field name="ogrn_number"/>
+                                <label name="okpo_number"/>
+                                <field name="okpo_number"/>
+                                <label name="okved_number"/>
+                                <field name="okved_number"/>
+                            </group>
+                            <field name="banks" mode="tree,form" colspan="4">
+                                <tree string="Accounts in Banks"
+                                    fill="1">
+                                    <field name="type_account"/>
+                                    <field name="account"/>
+                                    <field name="name"/>
+                                    <field name="bic"/>
+                                    <field name="corr_account"/>
+                                    <field name="end_date"/>
+                                    <field name="active"/>
+                                </tree>
+                                <form string="Account in Bank" col="6">
+                                    <label name="type_account"/>
+                                    <field name="type_account" xexpand="0" width="200"/>
+                                    <label name="account"/>
+                                    <field name="account" xexpand="0" width="160"/>
+                                    <newline/>
+                                    <group colspan="6" col="12" id="account">
+                                        <label name="bic"/>
+                                        <field name="bic" xexpand="0" width="100"/>
+                                        <label name="corr_account"/>
+                                        <field name="corr_account" xexpand="0" width="160"/>
+                                        <label name="name"/>
+                                        <field colspan="3" name="name" />
+                                    </group>
+                                    <newline/>
+                                    <group colspan="6" col="12" id="account">
+                                        <label  name="address"/>
+                                        <field colspan="3" name="address" />
+                                        <label name="bank"/>
+                                        <field name="bank" xexpand="0" width="200"/>
+                                    </group>
+                                    <group colspan="2" col="20" id="checkboxes">
+                                        <label name="active"/>
+                                        <field name="active" 
+                                        xexpand="0" width="25"/>
+                                        <!-- Add here some checkboxes ! -->
+                                        <label name="end_date"/>
+                                        <field xexpand="0" width="100" name="end_date"/>
+                                    </group>
+                                </form>
+                            </field>
+                            <field name="document" mode="tree,form" colspan="4">
+                                <tree string="Legal Document" sequence="sequence"
+                                    fill="1">
+                                    <field name="typedoc"/>
+                                    <field name="number"/>
+                                    <field name="date_reg"/>
+                                    <field name="date_end"/>
+                                    <field name="active"/>
+                                    <field name="issued"/>
+                                </tree>
+                                <form string="Document">
+                                    <group id="document" col="8">
+                                        <label name="type_document"/>
+                                        <field colspan="3" name="type_document"/>
+                                        <label name="number"/>
+                                        <field colspan="1" name="number"/>
+                                        <label name="code"/>
+                                        <field colspan="1" name="code"/>
+                                        <label name="date_reg"/>
+                                        <field colspan="1" name="date_reg"/>
+                                        <label name="issued"/>
+                                        <field colspan="3" name="issued"/>
+                                        <label name="date_end"/>
+                                        <field colspan="1" name="date_end"/>
+                                        <label name="active"/>
+                                        <field colspan="1" name="active"/>
+                                        <label name="full_name"/>
+                                        <field colspan="3" name="full_name"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </xpath>
+                </data>
+                ]]>
+            </field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_party_form">
+            <field name="name">Parties</field>
+            <field name="res_model">party.party</field>
+            <field name="view_type">form</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_party_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="party_view_tree"/>
+            <field name="act_window" ref="act_party_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_party_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="party_view_form"/>
+            <field name="act_window" ref="act_party_form"/>
+        </record>
+
+
+        <record model="ir.action.act_window" id="act_party_form2">
+            <field name="name">Parties</field>
+            <field name="res_model">party.party</field>
+            <field name="view_type">form</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_party_form2_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="party_view_form"/>
+            <field name="act_window" ref="act_party_form2"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_party_form2_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="party_view_tree"/>
+            <field name="act_window" ref="act_party_form2"/>
+        </record>
+
+        <menuitem parent="party.menu_party" sequence="1" groups="group_party_write,party.group_party_admin"
+            action="act_party_form" id="menu_party_form"/>
+
+        <menuitem name="New Party" parent="menu_party_form" sequence="1"
+            action="act_party_form2" id="menu_party_form2" groups="group_party_write,party.group_party_admin"/>
+
+    </data>
+</tryton>

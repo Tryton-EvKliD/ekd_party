@@ -1,1 +1,54 @@
-/home/trytond-1.8.2/trytond/modules/ekd_party/xml/ekd_system.xml
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data noupdate="0">
+
+<!-- Diction For Level Analytic -->
+    <record model="ir.dictions"
+        id="type_document_certificate_00">
+        <field name="key">certificate_00</field>
+        <field name="value">Registration certificate</field>
+        <field name="model">ekd.party.document.type</field>
+        <field name="pole">type_document</field>
+        <field name="sequence">010</field>
+    </record>
+
+    <record model="ir.dictions"
+        id="type_document_ogrn_00">
+        <field name="key">ogrn_00</field>
+        <field name="value">Certificate of Registry</field>
+        <field name="model">ekd.party.document.type</field>
+        <field name="pole">type_document</field>
+        <field name="sequence">010</field>
+    </record>
+
+    <record model="ir.dictions"
+        id="type_document_inn_tax_00">
+        <field name="key">inn_tax_00</field>
+        <field name="value">Certificate of tax registration</field>
+        <field name="model">ekd.party.document.type</field>
+        <field name="pole">type_document</field>
+        <field name="sequence">010</field>
+    </record>
+
+    <record model="ir.dictions"
+        id="type_document_inn_stat_00">
+        <field name="key">inn_stat_00</field>
+        <field name="value">Certificate of statistics</field>
+        <field name="model">ekd.party.document.type</field>
+        <field name="pole">type_document</field>
+        <field name="sequence">010</field>
+    </record>
+
+    <record model="ir.dictions"
+        id="type_document_password_01">
+        <field name="key">passport</field>
+        <field name="value">Passport</field>
+        <field name="model">ekd.party.document.type</field>
+        <field name="pole">type_document</field>
+        <field name="sequence">010</field>
+    </record>
+
+    </data>
+</tryton>

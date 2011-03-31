@@ -1,0 +1,305 @@
+type,name,res_id,src,value,fuzzy
+error,ekd.party.bank,0,You can not modify the party of an address!,,0
+error,ekd.party.bank_account,0,You can not modify the party of an address!,,0
+error,party.address,0,You can not modify the party of an address!,,0
+error,party.category,0,You can not create recursive categories!,Вы не можете создавать рекурсивные категории!,0
+error,party.check_vies,0,"The VIES service is unavailable, try again later.",,0
+error,party.contact_mechanism,0,You can not modify the party of a contact mechanism!,,0
+error,party.party,0,Invalid VAT number!,Ошибка в номере ИНН,0
+error,party.party,0,The code of the party must be unique!,Код контрагента должен быть уникальным,0
+field,"ekd.party.bank,active",0,Active,Действующий,0
+field,"ekd.party.bank,address",0,Address,Адрес,0
+field,"ekd.party.bank,bic",0,BIC,БИК,0
+field,"ekd.party.bank,change_date",0,Date Change,Дата изменения,0
+field,"ekd.party.bank,city",0,City,Город,0
+field,"ekd.party.bank,corr_account",0,Corr Account,Корр. счет,0
+field,"ekd.party.bank,end_date",0,Date End,Дата окончания,0
+field,"ekd.party.bank,full_name",0,Full Name,Полное наименование,0
+field,"ekd.party.bank,name",0,Name,Наименование,0
+field,"ekd.party.bank,okpo",0,OKPO,,0
+field,"ekd.party.bank,phone",0,Phones,,0
+field,"ekd.party.bank,rec_name",0,Name,Наименование,0
+field,"ekd.party.bank,rkc",0,RKC,,0
+field,"ekd.party.bank,shortname",0,ShortName,Кратко,0
+field,"ekd.party.bank,start_date",0,Date Start,Дата начала,0
+field,"ekd.party.bank,zip",0,Zip,Индекс,0
+field,"ekd.party.bank_account,account",0,Account,Расчетный счет,0
+field,"ekd.party.bank_account,active",0,Active,Активный,0
+field,"ekd.party.bank_account,address",0,Bank Street,Адрес,0
+field,"ekd.party.bank_account,bank",0,Bank,Банк,0
+field,"ekd.party.bank_account,bic",0,BIC,БИК,0
+field,"ekd.party.bank_account,corr_account",0,Corr Account,Корр. счет,0
+field,"ekd.party.bank_account,currency",0,Currency,Валюта,0
+field,"ekd.party.bank_account,currency_digits",0,Currency Digits,Кол-во десятичных знаков,0
+field,"ekd.party.bank_account,end_date",0,Date End,Дата окончания,0
+field,"ekd.party.bank_account,full_name",0,Full Name,Полное наименование,0
+field,"ekd.party.bank_account,name",0,Bank Name,Наименование банка,0
+field,"ekd.party.bank_account,party",0,Party,Контрагент,0
+field,"ekd.party.bank_account,rec_name",0,Name,Наименование,0
+field,"ekd.party.bank_account,type_account",0,Type Account,Тип счета,0
+field,"ekd.party.contact,active",0,Active,Активный,0
+field,"ekd.party.contact,contact",0,Contact Person,Контрагент,0
+field,"ekd.party.contact,date_end",0,Date End,Дата окончание,0
+field,"ekd.party.contact,email",0,E-Mail,Эл.почта,0
+field,"ekd.party.contact,fax",0,Fax,Факс,0
+field,"ekd.party.contact,function",0,Job Function,Должность,0
+field,"ekd.party.contact,job_function",0,Job Function,Должность,0
+field,"ekd.party.contact,mobile",0,Mobile,сот.телефон,0
+field,"ekd.party.contact,note",0,Notes,Комментарии,0
+field,"ekd.party.contact,party",0,Party,Контрагент,0
+field,"ekd.party.contact,phone",0,Phone,Телефон,0
+field,"ekd.party.contact,rec_name",0,Name,Наименование,0
+field,"ekd.party.contact,type_contact",0,Type Contact Person,Тип должности,0
+field,"ekd.party.contact,website",0,Website,Сайт,0
+field,"ekd.party.document,active",0,Valid,Действует,0
+field,"ekd.party.document,code",0,Code,Код,0
+field,"ekd.party.document,date_end",0,End of document,Дата окончания,0
+field,"ekd.party.document,date_reg",0,Registered,Дата выдачи,0
+field,"ekd.party.document,full_name",0,Full Name in Document,ФИО по документу,0
+field,"ekd.party.document,issued",0,Issued,Выдано,0
+field,"ekd.party.document,name",0,Name,Наименование,0
+field,"ekd.party.document,number",0,Number,номер,0
+field,"ekd.party.document,party",0,Party,Контрагент,0
+field,"ekd.party.document,rec_name",0,Name,Наименование,0
+field,"ekd.party.document,type_document",0,Type Document,Тип регистрационного документа,0
+field,"ekd.party.document,typedoc",0,Type Document,Тип регистрационного документа,1
+field,"ekd.party.document.type,active",0,Valid,Действует,0
+field,"ekd.party.document.type,code",0,Code,Код,0
+field,"ekd.party.document.type,code01",0,Code 01,,0
+field,"ekd.party.document.type,code02",0,Code 02,,0
+field,"ekd.party.document.type,name",0,Name,Наименование,0
+field,"ekd.party.document.type,rec_name",0,Name,Наименование,0
+field,"ekd.party.document.type,shortname",0,Shortname,Кратко,0
+field,"ekd.party.document.type,type_document",0,Type Document,Тип регистрационного документа,0
+field,"ekd.party.document.type,typedoc",0,Type Document,Тип регистрационного документа,0
+field,"ekd.party.job_function,name",0,Name,Наименование,0
+field,"ekd.party.job_function,rec_name",0,Name,Наименование,0
+field,"ekd.party.job_function,shortname",0,Short Name,Кратко,0
+field,"ekd.party.legal,active",0,Active,Активный,0
+field,"ekd.party.legal,date_end",0,End of document,Дата окончания,0
+field,"ekd.party.legal,name",0,Full Name,Полное наименование,0
+field,"ekd.party.legal,rec_name",0,Name,Наименование,0
+field,"ekd.party.legal,shortname",0,Shortname,Кратко,0
+field,"party.address,active",0,Active,Активный,0
+field,"party.address,area_residence",0,Area of residence,Район проживания,0
+field,"party.address,city",0,City,Город,0
+field,"party.address,country",0,Country,Страна,0
+field,"party.address,date_end",0,Date End,Дата окончания,0
+field,"party.address,full_address",0,Full Address,Полный адрес,0
+field,"party.address,name",0,Name,Наименование,0
+field,"party.address,party",0,Party,Контрагент,0
+field,"party.address,rec_name",0,Name,Наименование,0
+field,"party.address,sequence",0,Sequence,Последовательность,0
+field,"party.address,street",0,Street,улица,0
+field,"party.address,streetbis",0,Street (bis),улица (доп.),0
+field,"party.address,subdivision",0,Subdivision,Подраздел,0
+field,"party.address,type_address",0,Type Address,,0
+field,"party.address,zip",0,Zip,Индекс,0
+field,"party.category,active",0,Active,Активный,0
+field,"party.category,childs",0,Children,Подчиненый,0
+field,"party.category,name",0,Name,Наименование,0
+field,"party.category,parent",0,Parent,Основной,0
+field,"party.category,rec_name",0,Name,Наименование,0
+field,"party.check_vies.check,parties_failed",0,Parties Failed,,0
+field,"party.check_vies.check,parties_succeed",0,Parties Succeed,,0
+field,"party.configuration,party_sequence",0,Party Sequence,,0
+field,"party.configuration,rec_name",0,Name,Наименование,0
+field,"party.contact_mechanism,active",0,Active,Активный,0
+field,"party.contact_mechanism,comment",0,Comment,Комментарии,0
+field,"party.contact_mechanism,email",0,E-Mail,Эл.почта,0
+field,"party.contact_mechanism,other_value",0,Value,Значение,0
+field,"party.contact_mechanism,party",0,Party,Контрагент,0
+field,"party.contact_mechanism,rec_name",0,Name,Наименование,0
+field,"party.contact_mechanism,sequence",0,Sequence,Последовательность,0
+field,"party.contact_mechanism,sip",0,SIP,,0
+field,"party.contact_mechanism,skype",0,Skype,,0
+field,"party.contact_mechanism,type",0,Type,Тип,0
+field,"party.contact_mechanism,value",0,Value,Значение,0
+field,"party.contact_mechanism,website",0,Website,Сайт,0
+field,"party.customer,party",0,Party,Контрагенты,0
+field,"party.customer,rec_name",0,Name,Наименование,0
+field,"party.party,active",0,Active,Активный,0
+field,"party.party,addresses",0,Addresses,Адреса,0
+field,"party.party,bank_account",0,Party account,,0
+field,"party.party,bank_bic",0,Bank BIC,,0
+field,"party.party,bank_corr_account",0,Bank Corr account,,0
+field,"party.party,bank_name",0,Bank name,,0
+field,"party.party,banks",0,Accounts in Banks,Счета в Банках,0
+field,"party.party,birthday",0,Birthday,День рождения,0
+field,"party.party,categories",0,Categories,Категория,0
+field,"party.party,childs_party",0,Children Party,,0
+field,"party.party,code",0,Code,Код,0
+field,"party.party,code_length",0,Code Length,Длина Кода,0
+field,"party.party,contact_mechanisms",0,Contact Mechanisms,Контактный способы,0
+field,"party.party,contacts",0,Contact,Контактое лицо,0
+field,"party.party,customer",0,Customer,Заказчик,0
+field,"party.party,deleted",0,,,0
+field,"party.party,document",0,Legal Documents,Рег.документ,0
+field,"party.party,document_active",0,Legal Documents,Рег.документ,0
+field,"party.party,email",0,E-Mail,Эл.почта,0
+field,"party.party,fax",0,Fax,Факс,0
+field,"party.party,full_name",0,Full Name,Полное наименование,0
+field,"party.party,id_1c",0,ID import from 1C,,0
+field,"party.party,individual",0,Individual,Физ.лицо,0
+field,"party.party,kpp_number",0,Reason code setting,КПП,0
+field,"party.party,lang",0,Language,Язык,0
+field,"party.party,legal_form",0,Legal Form,,0
+field,"party.party,mobile",0,Mobile,сот.телефон,0
+field,"party.party,name",0,Full Name,Наименование,0
+field,"party.party,note",0,Notes,Комментарии,0
+field,"party.party,ogrn_number",0,OGRN registration number,ОГРН,0
+field,"party.party,okpo_number",0,OKPO registration number,ОКПО,0
+field,"party.party,okved_number",0,OKVED registration number,ОКВЭД,0
+field,"party.party,parent_party",0,Parent,Основной,0
+field,"party.party,phone",0,Phone,Телефон,0
+field,"party.party,photo",0,Person Photo or Logo,Фотография или Логотип,0
+field,"party.party,photo_file",0,Person Photo or Logo,Фотография или Логотип,0
+field,"party.party,rec_name",0,Name,Наименование,0
+field,"party.party,shortname",0,Short Name,Кратко,0
+field,"party.party,supplier",0,Supplier,Поставщик,0
+field,"party.party,vat_code",0,VAT Code,Код ИНН,0
+field,"party.party,vat_country",0,VAT Country,Страна ИНН ,0
+field,"party.party,vat_number",0,VAT Number,ИНН,0
+field,"party.party,website",0,Website,Сайт,0
+field,"party.party-party.category,category",0,Category,Категории,0
+field,"party.party-party.category,party",0,Party,Контрагент,0
+field,"party.party-party.category,rec_name",0,Name,Наименование,0
+field,"party.supplier,party",0,Party,Контрагенты,0
+field,"party.supplier,rec_name",0,Name,Наименование,0
+help,"party.party,customer",0,Check this box if the party is a Cusmomer.,"Отметьте, если это заказчик",0
+help,"party.party,individual",0,Check this box if the party is a Individual.,"Отметьте, если это физические лицо",0
+help,"party.party,supplier",0,Check this box if the party is a Supplier.,"Отметьте, если это поставщик",0
+help,"party.party,vat_country",0,Setting VAT country will enable validation of the VAT number.,Установите страну регистрации организации для проверки,0
+help,"party.party,vat_number",0,Value Added Tax number,ИНН,0
+model,"ekd.party.bank,name",0,Bank,Банк,0
+model,"ekd.party.bank_account,name",0,Bank,Банк,0
+model,"ekd.party.contact,name",0,Contact,Контактое лицо,0
+model,"ekd.party.document,name",0,Documents of state registrations of Partner ,Регистрационные документы,0
+model,"ekd.party.document.type,name",0,Type Document registrations of Partner ,,0
+model,"ekd.party.job_function,name",0,Contact,Контактое лицо,0
+model,"ekd.party.legal,name",0,Legal form of Partner , Юридическая форма,0
+model,"ir.action,name",act_bank_account_form,Bank Account,Счет в банке,0
+model,"ir.action,name",act_bank_account_form2,Bank Account,Счет в банке,0
+model,"ir.action,name",act_bank_form,Banks,Банки,0
+model,"ir.action,name",act_bank_form2,bankes,Банки,0
+model,"ir.action,name",act_jobfunction_form,Job Function,Должность,0
+model,"ir.action,name",act_legal_form,Legal form,,0
+model,"ir.action,name",act_party_contact_form,Contact,Контактое лицо,0
+model,"ir.action,name",act_party_form,Parties,Контрагенты,0
+model,"ir.action,name",act_party_form2,Parties,Контрагенты,0
+model,"ir.action,name",act_person_form,Persons,Физические лица,0
+model,"ir.dictions,value",type_document_certificate_00,Registration certificate,,0
+model,"ir.dictions,value",type_document_inn_stat_00,Certificate of statistics,,0
+model,"ir.dictions,value",type_document_inn_tax_00,Certificate of tax registration,,0
+model,"ir.dictions,value",type_document_ogrn_00,Certificate of Registry,,0
+model,"ir.dictions,value",type_document_password_01,Passport,,0
+model,"ir.ui.menu,name",menu_bank_account_form,Bank account,,0
+model,"ir.ui.menu,name",menu_bank_account_form2,New bank,Новый банк,0
+model,"ir.ui.menu,name",menu_bank_form,bankes,Банки,0
+model,"ir.ui.menu,name",menu_bank_form2,New bank,Новый банк,0
+model,"ir.ui.menu,name",menu_jobfunction_form,Job Function,Должность,0
+model,"ir.ui.menu,name",menu_legal_form,Legal form,,0
+model,"ir.ui.menu,name",menu_party_contact_form,Contact,Контактое лицо,0
+model,"ir.ui.menu,name",menu_party_form,Parties,Контрагенты,0
+model,"ir.ui.menu,name",menu_party_form2,New Party,Новый контрагент,0
+model,"ir.ui.menu,name",menu_person_form,Persons,Физические лица,0
+model,"party.address,name",0,Address,Адрес,0
+model,"party.category,name",0,Category,Категории,0
+model,"party.check_vies.check,name",0,Check VIES - Check,Проверить VIES - проверить,0
+model,"party.check_vies.no_check,name",0,Check VIES - No Check,Проверить VIES - не проверять,0
+model,"party.configuration,name",0,Party Configuration,Настройка контрагентов,0
+model,"party.customer,name",0,Party Customer,,0
+model,"party.party,name",0,Party,Контрагент,0
+model,"party.party-party.category,name",0,Party - Category,Контрагент - Категории,0
+model,"party.supplier,name",0,Party Supplier,,0
+model,"res.group,name",group_party_read,Party (read),,0
+model,"res.group,name",group_party_write,Party (write),Организации (запись) ,0
+selection,"ekd.party.contact,type_contact",0,Chief Accountant,Главный бухгалтер,0
+selection,"ekd.party.contact,type_contact",0,Chief Officer,Директор,0
+selection,"ekd.party.contact,type_contact",0,Employee,Сотрудник,0
+selection,"ekd.party.contact,type_contact",0,Manager,Менеджер,0
+selection,"party.contact_mechanism,type",0,E-Mail,Эл.почта,0
+selection,"party.contact_mechanism,type",0,Fax,Факс,0
+selection,"party.contact_mechanism,type",0,IRC,,0
+selection,"party.contact_mechanism,type",0,Jabber,,0
+selection,"party.contact_mechanism,type",0,Mobile,сот.телефон,0
+selection,"party.contact_mechanism,type",0,Other,Прочий,0
+selection,"party.contact_mechanism,type",0,Phone,Телефон,0
+selection,"party.contact_mechanism,type",0,SIP,,0
+selection,"party.contact_mechanism,type",0,Skype,,0
+selection,"party.contact_mechanism,type",0,Website,Сайт,0
+selection,"party.party,vat_country",0,,Резервный счет,0
+selection,"party.party,vat_country",0,AL,,0
+selection,"party.party,vat_country",0,AT,,0
+selection,"party.party,vat_country",0,BE,,0
+selection,"party.party,vat_country",0,BG,,0
+selection,"party.party,vat_country",0,CL,,0
+selection,"party.party,vat_country",0,CO,,0
+selection,"party.party,vat_country",0,CY,,0
+selection,"party.party,vat_country",0,CZ,,0
+selection,"party.party,vat_country",0,DE,,0
+selection,"party.party,vat_country",0,DK,,0
+selection,"party.party,vat_country",0,EE,,0
+selection,"party.party,vat_country",0,EL,,0
+selection,"party.party,vat_country",0,ES,,0
+selection,"party.party,vat_country",0,FI,,0
+selection,"party.party,vat_country",0,FR,,0
+selection,"party.party,vat_country",0,GB,,0
+selection,"party.party,vat_country",0,GR,,0
+selection,"party.party,vat_country",0,HU,,0
+selection,"party.party,vat_country",0,IE,,0
+selection,"party.party,vat_country",0,IT,,0
+selection,"party.party,vat_country",0,LT,,0
+selection,"party.party,vat_country",0,LU,,0
+selection,"party.party,vat_country",0,LV,,0
+selection,"party.party,vat_country",0,MT,,0
+selection,"party.party,vat_country",0,NL,,0
+selection,"party.party,vat_country",0,PL,,0
+selection,"party.party,vat_country",0,PT,,0
+selection,"party.party,vat_country",0,RO,,0
+selection,"party.party,vat_country",0,RU,,0
+selection,"party.party,vat_country",0,SE,,0
+selection,"party.party,vat_country",0,SI,,0
+selection,"party.party,vat_country",0,SK,,0
+selection,"party.party,vat_country",0,SM,,0
+selection,"party.party,vat_country",0,UA,,0
+selection,"party.party,vat_country",0,UK,,0
+view,ekd.party.bank,0,Account in Bank,Счет в банке,0
+view,ekd.party.bank,0,Addresses,Адреса,0
+view,ekd.party.bank_account,0,Account in Bank,Счет в банке,0
+view,ekd.party.bank_account,0,Accounts in Banks,Счета в Банках,0
+view,ekd.party.bank_account,0,Addresses,Адреса,0
+view,ekd.party.contact,0,Contact,Контакт,0
+view,ekd.party.contact,0,Contacts,Контактные лица,0
+view,ekd.party.job_function,0,Job Function,Должность,0
+view,ekd.party.legal,0,Legal form,,0
+view,party.address,0,Addresses,Адреса,0
+view,party.address,0,Job Function,Должность,0
+view,party.address,0,Notes,Комментарии,0
+view,party.category,0,Categories,Категория,0
+view,party.category,0,Category,Категории,0
+view,party.check_vies.check,0,Parties Failed,,0
+view,party.check_vies.check,0,Parties Succeed,,0
+view,party.check_vies.check,0,VAT Information Exchange System Results,ИНН Система обмена информацией о результатах,0
+view,party.check_vies.no_check,0,VAT Information Exchange System,ИНН Система обмена информацией,0
+view,party.check_vies.no_check,0,"You must have a recent version of ""vatnumber"" installed!",,0
+view,party.configuration,0,Party Configuration,Настройка контрагентов,0
+view,party.contact_mechanism,0,Contact Mechanism,Контактный способ,0
+view,party.contact_mechanism,0,Contact Mechanisms,Контактный способы,0
+view,party.party,0,Account in Bank,Счет в банке,0
+view,party.party,0,Accounting,Финансовые настройки,0
+view,party.party,0,Accounts in Banks,Счета в банках,0
+view,party.party,0,Addresses,Адреса,0
+view,party.party,0,Categories,Категория,0
+view,party.party,0,Contact Mechanisms,Контактный способы,0
+view,party.party,0,Contacts,Контактные лица,0
+view,party.party,0,Document,Документ,0
+view,party.party,0,General,Основной,0
+view,party.party,0,Legal Document,Регистрационный документ,0
+view,party.party,0,Parties,Контрагенты,0
+view,party.party,0,Party,Контрагент,0
+view,party.party,0,Person,Контрагент,0
+view,party.party,0,Persons,Физические лица,0
+view,party.party,0,VAT,ИНН,0
+wizard_button,"party.check_vies,check,end",0,Ok,Да,0
+wizard_button,"party.check_vies,no_check,end",0,Ok,Да,0

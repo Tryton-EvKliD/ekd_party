@@ -1,1 +1,58 @@
-/home/trytond-1.8.2/trytond/modules/ekd_party/xml/legal_form.xml
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="view_legal_tree">
+            <field name="model">ekd.party.legal</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <tree string="Legal form">
+                    <field name="name" select="1"/>
+                    <field name="shortname" select="1"/>
+                    <field name="date_end" select="1"/>
+                    <field name="active" select="1"/>
+                </tree>
+                ]]>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_legal_form">
+            <field name="model">ekd.party.legal</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <form string="Legal form" col="4">
+                    <label name="name"/>
+                    <field name="name"/>
+                    <label name="shortname"/>
+                    <field name="shortname"/>
+                    <label name="date_end"/>
+                    <field name="date_end"/>
+                    <label name="active"/>
+                    <field name="active"/>
+                </form>
+                ]]>
+            </field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_legal_form">
+            <field name="name">Legal form</field>
+            <field name="res_model">ekd.party.legal</field>
+            <field name="view_type">form</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_legal_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="view_legal_tree"/>
+            <field name="act_window" ref="act_legal_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_legal_form_view2">
+          <field name="sequence" eval="20"/>
+          <field name="view" ref="view_legal_form"/>
+          <field name="act_window" ref="act_legal_form"/>
+        </record>
+        <menuitem name="Legal form" parent="party.menu_configuration"
+              sequence="2" action="act_legal_form"
+              id="menu_legal_form"/>
+    </data>
+</tryton>
